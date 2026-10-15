@@ -1,15 +1,15 @@
 # Nayeli Santos · Portafolio
 
-Portafolio personal de una desarrolladora web en formación. Diseño editorial con retrato, proyectos y galerías de capturas reales.
+Portafolio personal de una desarrolladora web en formación. Diseño negro y verde con formas animadas, retrato y galerías de capturas reales.
 
-[Visitar el portafolio](https://nayelisantos19.github.io/)
+[Visitar mi portafolio](https://nayelisantos19.github.io/)
 
 ## Proyectos
 
 - [Ritmo](https://github.com/NayeliSantos19/ritmo-study-app): seguimiento de estudio y enfoque.
 - [StudySpot](https://github.com/NayeliSantos19/studyspot): espacios de estudio universitarios.
 - [Bobinapp](https://github.com/NayeliSantos19/bobinapp): gestión de ganado bovino.
-- [Comanda](https://github.com/NayeliSantos19/comanda) y [Filalista](https://github.com/NayeliSantos19/filalista): pedidos de comida y un proyecto pendiente de documentar, respectivamente.
+- [Comanda](https://github.com/NayeliSantos19/comanda) y [Filalista](https://github.com/NayeliSantos19/filalista): más proyectos disponibles en GitHub.
 
 ## Vista previa
 
@@ -25,9 +25,8 @@ Descarga el repositorio y abre index.html en un navegador moderno, o sirve la ca
 
 ## Notas sobre las capturas
 
-Las imágenes de Bobinapp corresponden al prototipo web publicado en su repositorio, no a Android. La demo de StudySpot mostraba un error de conexión de datos el 15 de octubre de 2026; las capturas y sus leyendas conservan ese estado. Las fuentes de Google tienen alternativas del sistema.
+Las imágenes de Bobinapp corresponden al prototipo web publicado en su repositorio, no a Android. StudySpot incluye capturas de la demo con su conexión de datos restaurada. Las fuentes de Google tienen alternativas del sistema.
 
 ## Proceso de aprendizaje
 
 Proyecto desarrollado con asistencia de Codex. Forma parte de mi proceso de aprendizaje en estructura semántica, CSS adaptable, interacciones de JavaScript y publicación web.
-

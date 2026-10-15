@@ -1,6 +1,6 @@
 const projectShots={
  ritmo:[{file:'ritmo-panel.png',title:'Tu espacio de estudio',note:'Captura de la app local, sin sesiones registradas.'},{file:'ritmo-enfoque.png',title:'Modo inmersivo',note:'Temporizador de enfoque con menos distracciones.'}],
- studyspot:[{file:'studyspot-inicio.png',title:'Pantalla principal',note:'Captura de la demo. La conexión de datos no estaba disponible al capturar; no se añadieron lugares ficticios.'},{file:'studyspot-filtros.png',title:'Filtros de búsqueda',note:'Panel real de wifi, enchufes, silencio y tipo de lugar. La demo tenía la conexión de datos no disponible.'}],
+ studyspot:[{file:'studyspot-inicio.png',title:'Pantalla principal',note:'Demo con espacios de estudio y reseñas disponibles.'},{file:'studyspot-filtros.png',title:'Filtros de búsqueda',note:'Panel de wifi, enchufes, silencio y tipo de lugar.'}],
  bobinapp:[{file:'bobinapp-panel.png',title:'Panel de analíticas',note:'Captura del prototipo web publicada en el repositorio de Bobinapp; no es una captura de Android.'},{file:'bobinapp-movil.png',title:'Vista en teléfono',note:'Vista móvil del prototipo web, tomada de las capturas del repositorio.'},{file:'bobinapp-genealogia.png',title:'Árbol genealógico',note:'Captura del prototipo web publicada en el repositorio de Bobinapp.'}]
 };
 let currentShots=[],shotIndex=0;
