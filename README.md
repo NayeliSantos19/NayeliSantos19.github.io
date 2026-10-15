@@ -2,12 +2,14 @@
 
 Portafolio personal de una desarrolladora web en formación. Diseño editorial con retrato, proyectos y galerías de capturas reales.
 
+[Visitar el portafolio](https://nayelisantos19.github.io/)
+
 ## Proyectos
 
 - [Ritmo](https://github.com/NayeliSantos19/ritmo-study-app): seguimiento de estudio y enfoque.
 - [StudySpot](https://github.com/NayeliSantos19/studyspot): espacios de estudio universitarios.
 - [Bobinapp](https://github.com/NayeliSantos19/bobinapp): gestión de ganado bovino.
-- [Comanda](https://github.com/NayeliSantos19/comanda) y [Filalista](https://github.com/NayeliSantos19/filalista): repositorios por completar o documentar.
+- [Comanda](https://github.com/NayeliSantos19/comanda) y [Filalista](https://github.com/NayeliSantos19/filalista): pedidos de comida y un proyecto pendiente de documentar, respectivamente.
 
 ## Vista previa
 
@@ -28,3 +30,4 @@ Las imágenes de Bobinapp corresponden al prototipo web publicado en su reposito
 ## Proceso de aprendizaje
 
 Proyecto desarrollado con asistencia de Codex. Forma parte de mi proceso de aprendizaje en estructura semántica, CSS adaptable, interacciones de JavaScript y publicación web.
+
