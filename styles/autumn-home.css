@@ -1,0 +1,87 @@
+.block-portrait {
+  background: radial-gradient(ellipse at 55% 38%, #ba391d, #63190f 62%, #1c1e13);
+}
+.block-portrait img {
+  object-fit: contain;
+  object-position: center 36%;
+}
+.block-portrait figcaption {
+  background: linear-gradient(transparent, #1c1e13 80%);
+  padding: 28px 16px 12px;
+}
+.mascot-route {
+  --mascot-size: clamp(54px, 7vw, 80px);
+  position: fixed;
+  z-index: 8;
+  inset: 6rem 1rem max(1rem, env(safe-area-inset-bottom)) 1rem;
+  pointer-events: none;
+}
+.mascot-route[hidden], .mascot-message[hidden] {
+  display: none;
+}
+.mascot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: var(--mascot-size);
+  animation: mascot-walk 32s linear infinite;
+}
+.mascot-button {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 1px solid #ce9645;
+  border-radius: 18px;
+  background: #1c1e13;
+  box-shadow: 0 8px 22px #1c1e1370;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.mascot-button img {
+  display: block;
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.mascot-button:focus-visible {
+  outline: 3px solid #f7ecd8;
+  outline-offset: 3px;
+}
+.mascot-message {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 8px);
+  width: 10rem;
+  margin: 0;
+  padding: 9px 11px;
+  border: 1px solid #ce9645;
+  border-radius: 12px;
+  color: #f7ecd8;
+  background: #63190f;
+  font-size: .8rem;
+}
+.motion-paused .mascot,
+.mascot-route.is-greeting .mascot,
+.mascot-route:has(:focus-visible) .mascot,
+.mascot-route:hover .mascot {
+  animation-play-state: paused;
+}
+@keyframes mascot-walk {
+  0%, 100% { left: 0; bottom: 0; }
+  34% { left: calc(100% - var(--mascot-size)); bottom: 0; }
+  50% { left: calc(100% - var(--mascot-size)); bottom: 40%; }
+  84% { left: 0; bottom: 40%; }
+}
+@media (max-width: 620px) {
+  .mascot-route { inset-inline: .6rem; }
+  .mascot { animation-name: mascot-walk-mobile; animation-duration: 25s; }
+  @keyframes mascot-walk-mobile {
+    0%, 100% { left: 0; }
+    50% { left: calc(100% - var(--mascot-size)); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mascot { animation: none; }
+}

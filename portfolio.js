@@ -11,7 +11,10 @@ document.querySelectorAll('[data-detail]').forEach(button=>button.addEventListen
  modal.showModal();
 }));
 document.getElementById('close-dialog').onclick=()=>modal.close();
-modal.addEventListener('close',()=>opener?.focus());
+modal.addEventListener('close', () => {
+ const visibleOpener = opener && !opener.closest('[hidden]') ? opener : document.getElementById('quick-open');
+ visibleOpener?.focus();
+});
 modal.addEventListener('click',e=>{if(e.target!==modal)return;const r=modal.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)modal.close();});
 document.querySelectorAll('[data-filter]').forEach(button=>button.onclick=()=>{
  document.querySelectorAll('[data-filter]').forEach(b=>{const selected=b===button;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));});
