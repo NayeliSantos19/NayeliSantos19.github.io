@@ -69,3 +69,59 @@
   .principles { grid-template-columns: minmax(0,1fr); }
   .principles article + article { border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; }
 }
+
+.personal-intro h1 { color: #edf8f3; }
+
+.personal-home .mascot-route {
+  --mascot-size: clamp(42px, 5vw, 66px);
+  inset: 6rem .75rem max(.75rem, env(safe-area-inset-bottom)) .75rem;
+}
+.personal-home .mascot {
+  animation: nayeli-roam 29s ease-in-out infinite;
+}
+.personal-home .mascot-button {
+  width: 100%;
+  aspect-ratio: 80 / 175;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 6px;
+}
+.personal-home .mascot-button img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 5px 6px #071514a0);
+}
+.personal-home .mascot-message {
+  box-sizing: border-box;
+  z-index: 1;
+  font-size: .86rem;
+  line-height: 1.45;
+  box-shadow: 0 5px 16px #0006;
+}
+.personal-home .mascot-message:empty { visibility: hidden; }
+.personal-home .mascot-message.below { top: calc(100% + 8px); bottom: auto; }
+.personal-home.motion-paused .mascot,
+.personal-home .mascot-route.is-greeting .mascot,
+.personal-home .mascot-route:has(:focus-visible) .mascot { animation-play-state: paused; }
+
+@media (hover: hover) {
+  .personal-home .mascot-button:hover img { filter: drop-shadow(0 0 6px #71e9c6); }
+  .personal-home .mascot-route:hover .mascot { animation-play-state: paused; }
+}
+@keyframes nayeli-roam {
+  0%, 100% { left: 0; bottom: 0; transform: rotate(0); }
+  17% { left: 44%; bottom: 0; transform: rotate(0); }
+  21% { left: 53%; bottom: 10%; transform: rotate(-11deg); }
+  27% { left: 66%; bottom: 0; transform: rotate(5deg); }
+  37% { left: calc(100% - var(--mascot-size)); bottom: 0; transform: rotate(0); }
+  51% { left: calc(100% - var(--mascot-size)); bottom: max(0px, calc(100% - 2.19 * var(--mascot-size))); transform: rotate(0); }
+  67% { left: 53%; bottom: max(0px, calc(100% - 2.19 * var(--mascot-size))); transform: rotate(0); }
+  77% { left: 27%; bottom: 55%; transform: rotate(11deg); }
+  88% { left: 0; bottom: 40%; transform: rotate(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .personal-home:not(.motion-opt-in) .mascot { animation: none; }
+}
