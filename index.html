@@ -1,32 +1,25 @@
 <!doctype html>
 <html lang="es">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Nayeli Santos, desarrolladora web en formación. Proyectos, ideas y experimentos entre código y creatividad."><meta name="theme-color" content="#101027"><title>Inicio · Nayeli Santos</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css"><link rel="stylesheet" href="editorial.css"><link rel="stylesheet" href="gallery.css"><link rel="stylesheet" href="neo.css"><link rel="stylesheet" href="styles/autumn-home.css"><link rel="stylesheet" href="styles/retro.css"></head>
-<body>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Nayeli Santos, desarrolladora web en formación. Proyectos, ideas y experimentos entre código y creatividad."><meta name="theme-color" content="#101027"><title>Inicio · Nayeli Santos</title><link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="portfolio.css"><link rel="stylesheet" href="editorial.css"><link rel="stylesheet" href="gallery.css"><link rel="stylesheet" href="neo.css"><link rel="stylesheet" href="styles/autumn-home.css"><link rel="stylesheet" href="styles/retro.css"><link rel="stylesheet" href="styles/personal-pages.css"></head>
+<body class="personal-home">
 <a class="skip" href="#contenido">Saltar al contenido</a><div class="scroll-progress" aria-hidden="true"></div>
 <header class="nav"><a class="logo" href="index.html" aria-label="Nayeli Santos, inicio"><span class="retro-brand-icon" aria-hidden="true">✦</span>Nayeli Santos</a><nav aria-label="Principal"><a href="index.html" aria-current="page">Inicio</a><a href="proyectos.html">Proyectos</a><a href="sobre-mi.html">Sobre mí</a><button class="quick-open" id="quick-open" aria-haspopup="dialog">Explorar <kbd>/</kbd></button><a class="nav-contact" href="contacto.html">Contacto</a></nav></header>
 <main id="contenido">
-<section class="retro-hero wrap" id="inicio">
-  <div class="retro-copy">
-    <p class="retro-kicker">✦ PORTAFOLIO DE NAYELI SANTOS</p>
-    <h1>CÓDIGO<br><span>EN PIXELES</span></h1>
-    <p class="retro-intro">Soy Nayeli, desarrolladora web en formación. Me interesa el backend, las bases de datos y crear herramientas útiles con Java, Spring Boot y SQL.</p>
-    <div class="retro-actions">
-      <a class="button dark" href="proyectos.html">Ver proyectos ↗</a>
-      <a class="button outline" href="Nayeli-Santos-CV.pdf" download>Descargar CV ↓</a>
+<section class="personal-hero wrap" id="inicio">
+  <figure class="mini-portrait">
+    <img id="hero-mini" src="assets/mascot-still.png" width="80" height="175" alt="Mini versión pixelada de Nayeli Santos" fetchpriority="high">
+    <button class="mini-motion" id="home-motion" type="button" hidden>Activar animación</button>
+  </figure>
+  <div class="personal-intro">
+    <p class="personal-role">Desarrolladora web en formación</p>
+    <h1>Nayeli Santos</h1>
+    <p>Estudio Ingeniería en Desarrollo de Software. Me interesan el backend y las bases de datos, y disfruto crear herramientas útiles con Java, Spring Boot y SQL.</p>
+    <div class="personal-actions">
+      <a class="button dark" href="contacto.html">Contáctame</a>
+      <a class="button outline" href="sobre-mi.html">Sobre mí</a>
+      <a class="personal-cv" href="Nayeli-Santos-CV.pdf" download>Descargar CV ↓</a>
     </div>
   </div>
-  <div class="retro-machine">
-    <div class="crt">
-      <div class="crt-screen">
-        <img src="assets/portrait-blocks.webp" alt="Nayeli como figura de bloques" fetchpriority="high">
-        <a href="sobre-mi.html">▸ sobre-mi.html</a>
-      </div>
-      <div class="crt-controls" aria-hidden="true"><span></span><span></span></div>
-    </div>
-    <div class="pc-base" aria-hidden="true"><span></span><span></span><i></i></div>
-    <div class="pc-keyboard" aria-hidden="true"></div>
-  </div>
-  <button class="motion-toggle retro-motion" id="motion" type="button" aria-pressed="false" aria-label="Pausar animaciones">Ⅱ</button>
 </section>
 </main>
 <div class="mascot-route" id="mascot-route" hidden>

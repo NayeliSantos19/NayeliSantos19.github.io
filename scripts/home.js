@@ -3,16 +3,21 @@
   const button = document.getElementById('mascot-button');
   const image = document.getElementById('mascot-image');
   const message = document.getElementById('mascot-message');
-  const motionControl = document.getElementById('motion');
+  const motionControl = document.getElementById('home-motion');
+  const hero = document.getElementById('hero-mini');
+  let motionOverride;
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const still = 'assets/mascot-still.png';
   const walking = 'assets/mascot-walk.gif';
 
   function syncMascot() {
-    const paused = reducedMotion.matches
-      || document.body.classList.contains('motion-paused')
-      || !message.hidden;
-    const nextImage = paused ? still : walking;
+    const enabled = motionOverride ?? !reducedMotion.matches;
+    document.body.classList.toggle('motion-paused', !enabled);
+    document.body.classList.toggle('motion-opt-in', motionOverride === true);
+    motionControl.textContent = enabled ? 'Pausar animación' : 'Activar animación';
+    const heroImage = enabled ? walking : still;
+    if (hero.getAttribute('src') !== heroImage) hero.src = heroImage;
+    const nextImage = enabled && message.hidden ? walking : still;
     if (image.getAttribute('src') !== nextImage) image.src = nextImage;
   }
 
@@ -36,7 +41,11 @@
   window.addEventListener('resize', () => {
     if (!message.hidden) showGreeting(false);
   });
-  motionControl.addEventListener('click', syncMascot);
+  motionControl.addEventListener('click', () => {
+    motionOverride = !(motionOverride ?? !reducedMotion.matches);
+    syncMascot();
+  });
+  motionControl.hidden = false;
   reducedMotion.addEventListener('change', syncMascot);
   route.hidden = false;
   syncMascot();
