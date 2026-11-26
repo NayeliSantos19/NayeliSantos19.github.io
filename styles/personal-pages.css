@@ -32,13 +32,6 @@
 .personal-cv { color: #a8dfd0; font-size: .87rem; text-decoration: underline; }
 .personal-home .mascot-button { background: #10231f; border-color: #71e9c6; border-radius: 12px; }
 .personal-home .mascot-message { background: #10342d; border-color: #71e9c6; }
-@media (prefers-reduced-motion: reduce) {
-  .motion-opt-in .mascot { animation: mascot-walk 32s linear infinite; }
-  .motion-opt-in .mascot-route.is-greeting .mascot, .motion-opt-in .mascot-route:has(:focus-visible) .mascot { animation-play-state: paused; }
-}
-@media (prefers-reduced-motion: reduce) and (max-width: 620px) {
-  .motion-opt-in .mascot { animation-name: mascot-walk-mobile; animation-duration: 25s; }
-}
 .profile { display: grid; grid-template-columns: minmax(0, .77fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 5vw, 74px); padding-block: 55px 34px; }
 .profile-photo { position: relative; margin: 0; border: 3px solid #9559bd; box-shadow: 5px 5px #43286e, -4px -4px #51509c; border-radius: 15px 5px; }
 .profile-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1.12; object-fit: cover; object-position: center 35%; border-radius: inherit; }
@@ -103,13 +96,13 @@
 }
 .personal-home .mascot-message:empty { visibility: hidden; }
 .personal-home .mascot-message.below { top: calc(100% + 8px); bottom: auto; }
+.personal-home .mascot-route:hover .mascot { animation-play-state: running; }
 .personal-home.motion-paused .mascot,
 .personal-home .mascot-route.is-greeting .mascot,
 .personal-home .mascot-route:has(:focus-visible) .mascot { animation-play-state: paused; }
 
 @media (hover: hover) {
   .personal-home .mascot-button:hover img { filter: drop-shadow(0 0 6px #71e9c6); }
-  .personal-home .mascot-route:hover .mascot { animation-play-state: paused; }
 }
 @keyframes nayeli-roam {
   0%, 100% { left: 0; bottom: 0; transform: rotate(0); }
@@ -123,5 +116,12 @@
   88% { left: 0; bottom: 40%; transform: rotate(0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .personal-home:not(.motion-opt-in) .mascot { animation: none; }
+  .personal-home.motion-opt-in .mascot {
+    /* Override the site-wide reduced-motion rule only when explicitly enabled. */
+    animation: nayeli-roam 29s ease-in-out infinite !important;
+  }
+  .personal-home.motion-opt-in .mascot-route.is-greeting .mascot,
+  .personal-home.motion-opt-in .mascot-route:has(:focus-visible) .mascot {
+    animation-play-state: paused !important;
+  }
 }
