@@ -6,7 +6,7 @@ Portafolio personal de una desarrolladora web en formación. Diseño negro y ver
 
 ## Proyectos
 
-- [Ritmo](https://github.com/NayeliSantos19/ritmo-study-app): seguimiento de estudio y enfoque.
+- [Ritmo](https://github.com/NayeliSantos19/ritmo-study-app): planificación semanal y enfoque. [Demo pública](https://nayelisantos19.github.io/ritmo-demo/).
 - [StudySpot](https://github.com/NayeliSantos19/studyspot): espacios de estudio universitarios.
 - [Bobinapp](https://github.com/NayeliSantos19/bobinapp): gestión de ganado bovino.
 - [Comanda](https://github.com/NayeliSantos19/comanda) y [Filalista](https://github.com/NayeliSantos19/filalista): más proyectos disponibles en GitHub.
