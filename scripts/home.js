@@ -4,7 +4,6 @@
   const image = document.getElementById('mascot-image');
   const message = document.getElementById('mascot-message');
   const motionControl = document.getElementById('home-motion');
-  const hero = document.getElementById('hero-mini');
   let motionOverride;
   let factIndex = 0;
   let dismissTimer;
@@ -24,8 +23,6 @@
     document.body.classList.toggle('motion-paused', !enabled);
     document.body.classList.toggle('motion-opt-in', motionOverride === true);
     motionControl.textContent = enabled ? 'Pausar animación' : 'Activar animación';
-    const heroImage = enabled ? walking : still;
-    if (hero.getAttribute('src') !== heroImage) hero.src = heroImage;
     const nextImage = enabled && !route.classList.contains('is-greeting') ? walking : still;
     if (image.getAttribute('src') !== nextImage) image.src = nextImage;
   }

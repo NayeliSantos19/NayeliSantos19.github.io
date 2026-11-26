@@ -67,10 +67,13 @@
 
 .personal-home .mascot-route {
   --mascot-size: clamp(42px, 5vw, 66px);
+  --roam-top: max(0px, calc(100% - 2.19 * var(--mascot-size)));
+  --roam-right: calc(100% - var(--mascot-size));
+  --roam-duration: 32s;
   inset: 6rem .75rem max(.75rem, env(safe-area-inset-bottom)) .75rem;
 }
 .personal-home .mascot {
-  animation: nayeli-roam 29s ease-in-out infinite;
+  animation: nayeli-roam var(--roam-duration) linear infinite;
 }
 .personal-home .mascot-button {
   width: 100%;
@@ -104,21 +107,21 @@
 @media (hover: hover) {
   .personal-home .mascot-button:hover img { filter: drop-shadow(0 0 6px #71e9c6); }
 }
+@media (max-width: 620px) {
+  .personal-home .mascot-route { --roam-duration: 26s; }
+}
 @keyframes nayeli-roam {
-  0%, 100% { left: 0; bottom: 0; transform: rotate(0); }
-  17% { left: 44%; bottom: 0; transform: rotate(0); }
-  21% { left: 53%; bottom: 10%; transform: rotate(-11deg); }
-  27% { left: 66%; bottom: 0; transform: rotate(5deg); }
-  37% { left: calc(100% - var(--mascot-size)); bottom: 0; transform: rotate(0); }
-  51% { left: calc(100% - var(--mascot-size)); bottom: max(0px, calc(100% - 2.19 * var(--mascot-size))); transform: rotate(0); }
-  67% { left: 53%; bottom: max(0px, calc(100% - 2.19 * var(--mascot-size))); transform: rotate(0); }
-  77% { left: 27%; bottom: 55%; transform: rotate(11deg); }
-  88% { left: 0; bottom: 40%; transform: rotate(0); }
+  0%, 100% { left: 0; bottom: 0; }
+  22% { left: var(--roam-right); bottom: 0; }
+  36% { left: var(--roam-right); bottom: var(--roam-top); }
+  58% { left: 0; bottom: var(--roam-top); }
+  72% { left: 0; bottom: 0; }
+  87% { left: 48%; bottom: calc(var(--roam-top) * .52); }
 }
 @media (prefers-reduced-motion: reduce) {
   .personal-home.motion-opt-in .mascot {
     /* Override the site-wide reduced-motion rule only when explicitly enabled. */
-    animation: nayeli-roam 29s ease-in-out infinite !important;
+    animation: nayeli-roam var(--roam-duration) linear infinite !important;
   }
   .personal-home.motion-opt-in .mascot-route.is-greeting .mascot,
   .personal-home.motion-opt-in .mascot-route:has(:focus-visible) .mascot {
