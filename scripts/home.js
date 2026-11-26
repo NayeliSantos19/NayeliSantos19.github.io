@@ -4,7 +4,7 @@
   const image = document.getElementById('mascot-image');
   const message = document.getElementById('mascot-message');
   const motionControl = document.getElementById('home-motion');
-  let motionOverride;
+  let motionEnabled = true;
   let factIndex = 0;
   let dismissTimer;
   const facts = [
@@ -14,14 +14,13 @@
     '⏱️ Ritmo es mi proyecto para organizar sesiones de estudio.',
     '🐄 BobinApp me permitió explorar cómo aplicar la tecnología a la ganadería.'
   ];
-  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const still = 'assets/mascot-still.png';
   const walking = 'assets/mascot-walk.gif';
 
   function syncMascot() {
-    const enabled = motionOverride ?? !reducedMotion.matches;
+    const enabled = motionEnabled;
     document.body.classList.toggle('motion-paused', !enabled);
-    document.body.classList.toggle('motion-opt-in', motionOverride === true);
+    document.body.classList.toggle('motion-opt-in', enabled);
     motionControl.textContent = enabled ? 'Pausar animación' : 'Activar animación';
     const nextImage = enabled && !route.classList.contains('is-greeting') ? walking : still;
     if (image.getAttribute('src') !== nextImage) image.src = nextImage;
@@ -57,11 +56,10 @@
   });
   window.addEventListener('resize', hideFact);
   motionControl.addEventListener('click', () => {
-    motionOverride = !(motionOverride ?? !reducedMotion.matches);
+    motionEnabled = !motionEnabled;
     syncMascot();
   });
   motionControl.hidden = false;
-  reducedMotion.addEventListener('change', syncMascot);
   route.hidden = false;
   syncMascot();
 }

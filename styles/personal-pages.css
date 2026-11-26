@@ -70,6 +70,7 @@
   --roam-top: max(0px, calc(100% - 2.19 * var(--mascot-size)));
   --roam-right: calc(100% - var(--mascot-size));
   --roam-duration: 32s;
+  --roam-turn: clamp(16px, 3vw, 38px);
   inset: 6rem .75rem max(.75rem, env(safe-area-inset-bottom)) .75rem;
 }
 .personal-home .mascot {
@@ -111,16 +112,25 @@
   .personal-home .mascot-route { --roam-duration: 26s; }
 }
 @keyframes nayeli-roam {
-  0%, 100% { left: 0; bottom: 0; }
-  22% { left: var(--roam-right); bottom: 0; }
-  36% { left: var(--roam-right); bottom: var(--roam-top); }
-  58% { left: 0; bottom: var(--roam-top); }
-  72% { left: 0; bottom: 0; }
-  87% { left: 48%; bottom: calc(var(--roam-top) * .52); }
+  0%, 100% { left: var(--roam-turn); bottom: 0; }
+  20% { left: calc(var(--roam-right) - var(--roam-turn)); bottom: 0; }
+  22% { left: calc(var(--roam-right) - .28 * var(--roam-turn)); bottom: calc(.28 * var(--roam-turn)); }
+  24% { left: var(--roam-right); bottom: var(--roam-turn); }
+  34% { left: var(--roam-right); bottom: calc(var(--roam-top) - var(--roam-turn)); }
+  36% { left: calc(var(--roam-right) - .28 * var(--roam-turn)); bottom: calc(var(--roam-top) - .28 * var(--roam-turn)); }
+  38% { left: calc(var(--roam-right) - var(--roam-turn)); bottom: var(--roam-top); }
+  56% { left: var(--roam-turn); bottom: var(--roam-top); }
+  58% { left: calc(.28 * var(--roam-turn)); bottom: calc(var(--roam-top) - .28 * var(--roam-turn)); }
+  60% { left: 0; bottom: calc(var(--roam-top) - var(--roam-turn)); }
+  69% { left: 0; bottom: calc(var(--roam-top) * .38); }
+  72% { left: calc(.5 * var(--roam-turn)); bottom: calc(var(--roam-top) * .34); }
+  86% { left: 48%; bottom: calc(var(--roam-top) * .52); }
+  89% { left: 50%; bottom: calc(var(--roam-top) * .48); }
+  98% { left: calc(1.8 * var(--roam-turn)); bottom: calc(.3 * var(--roam-turn)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .personal-home.motion-opt-in .mascot {
-    /* Override the site-wide reduced-motion rule only when explicitly enabled. */
+    /* This character starts automatically and can be paused from the portrait. */
     animation: nayeli-roam var(--roam-duration) linear infinite !important;
   }
   .personal-home.motion-opt-in .mascot-route.is-greeting .mascot,
