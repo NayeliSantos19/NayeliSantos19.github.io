@@ -8,7 +8,7 @@
   let factIndex = 0;
   let dismissTimer;
   const facts = [
-    '🎓 Estudio Ingeniería en Desarrollo de Software en la UES, Chalatenango.',
+    '🎓 Estudio Ingeniería en Desarrollo de Software en la UES.',
     '☕ He creado APIs REST con Java y Spring Boot.',
     '💾 He diseñado bases de datos con Oracle XE.',
     '⏱️ Ritmo es mi proyecto para organizar sesiones de estudio.',
