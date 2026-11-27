@@ -1,0 +1,67 @@
+.projects-page .section-heading h1 {
+  margin: 0;
+  font: 750 clamp(2.1rem, 5vw, 4.5rem)/1.1 var(--retro-mono);
+  letter-spacing: -.07em;
+  color: var(--ink);
+}
+.projects-page .section-heading > p {
+  max-width: 43ch;
+  line-height: 1.65;
+  color: var(--muted);
+  margin-block: 12px 0;
+}
+.projects-page .project-toolbar,
+.projects-page .filters {
+  flex-wrap: wrap;
+}
+.projects-page .filters button[aria-pressed='true'] {
+  color: #142b36;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.projects-page .project-info h2,
+.projects-page .lab-project h2 {
+  color: var(--ink);
+  font: 680 clamp(1.35rem, 2.8vw, 2.2rem)/1.16 var(--retro-mono);
+  letter-spacing: -.04em;
+  margin: .65rem 0;
+}
+.projects-page .project-info > p,
+.projects-page .lab-project p:not(.project-label) {
+  font-size: .92rem;
+  color: var(--muted);
+}
+.projects-page .project-actions {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  border-color: var(--line);
+}
+.projects-page .project-actions > :is(a, button),
+.projects-page .lab-project .text-link {
+  color: var(--accent);
+  font: 600 .79rem/1.2 var(--retro-mono);
+}
+.projects-page .project-actions > :is(a, button) {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 6px 9px;
+}
+.projects-page .project-actions > .project-demo {
+  padding-inline: 13px;
+  color: #142b36;
+  background: var(--accent);
+}
+.projects-page .project-actions > :is(a, button):hover,
+.projects-page .lab-project .text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.projects-page .project-label {
+  color: var(--retro-orange);
+}
+@media (max-width: 680px) {
+  .projects-page .project-toolbar { gap: 8px; }
+  .projects-page .project-actions { gap: 5px; }
+}
